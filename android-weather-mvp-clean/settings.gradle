@@ -1,1 +1,1 @@
-include ':android-mobile-app', ':domain'
+include ':android-mobile-app', ':common', ':domain'
