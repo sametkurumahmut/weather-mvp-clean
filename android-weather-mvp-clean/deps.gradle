@@ -94,6 +94,18 @@ ext {
             kotlinJUnit:              "${kotlinGroupId}:${kotlinJUnitArtifactId}:${kotlinVersion}"
     ]
 
+    commonDeps = [
+            javaxAnnotation: "$javaxAnnotationId:$javaxAnnotationVersion",
+            javaxInject:     "$javaxInjectId:$javaxInjectVersion",
+            kotlin:          "$kotlinGroupId:$kotlinArtifactId:$kotlinVersion",
+            rxKotlin:        "$rxJavaGroupId:$rxKotlinArtifactId:$rxKotlinVersion"
+    ]
+
+    commonTestDeps = [
+            junit:       "$junitId:$jUnitVersion",
+            kotlinJUnit: "${kotlinGroupId}:${kotlinJUnitArtifactId}:${kotlinVersion}"
+    ]
+
     domainDeps = [
             javaxAnnotation: "$javaxAnnotationId:$javaxAnnotationVersion",
             javaxInject:     "$javaxInjectId:$javaxInjectVersion",
