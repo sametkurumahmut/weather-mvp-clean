@@ -1,0 +1,97 @@
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    //region Versions
+    //Android
+    androidBuildToolsVersion = '27.0.1'
+    androidMinSdkVersion = 14
+    androidTargetSdkVersion = 27
+    androidCompileSdkVersion = 27
+
+    // Libraries
+    androidSupportConstraintLayoutVersion = '1.0.2'
+    ankoVersion = '0.10.3'
+    daggerVersion = '2.13'
+    glideVersion = '4.4.0'
+    javaxAnnotationVersion = '1.0'
+    javaxInjectVersion = '1'
+    rxAndroidVersion = '2.0.1'
+    rxKotlinVersion = '2.2.0'
+    supportLibraryVersion = '27.0.2'
+
+    // Testing
+    androidSupportTestRunnerVersion = '1.0.1'
+    jUnitVersion = '4.12'
+    //endregion
+
+    //region Group and Artifact IDs
+    // Libraries
+    androidSupportAnnotationsArtifactId = 'support-annotations'
+    androidSupportConstraintLayoutId = 'com.android.support.constraint:constraint-layout'
+    androidSupportGroupId = 'com.android.support'
+    androidSupportDesignArtifactId = 'design'
+    androidSupportLibraryV4ArtifactId = 'support-v4'
+    androidSupportLibraryV13ArtifactId = 'support-v13'
+    androidSupportTestGroupId = 'com.android.support.test'
+    androidSupportTestRunnerArtifactId = 'runner'
+    androidSupportTestRulesArtifactId = 'rules'
+    ankoGroupId = 'org.jetbrains.anko'
+    ankoDesignArtifactId = 'anko-design'
+    appCompatV7ArtifactId = 'appcompat-v7'
+    daggerGroupId = 'com.google.dagger'
+    daggerArtifactId = 'dagger'
+    daggerAndroidSupportArtifactId = 'dagger-android-support'
+    daggerAndroidProcessorArtifactId = 'dagger-android-processor'
+    daggerCompilerArtifactId = 'dagger-compiler'
+    glideGroupId = 'com.github.bumptech.glide'
+    glideArtifactId = 'glide'
+    glideCompilerArtifactId = 'compiler'
+    javaxAnnotationId = 'javax.annotation:jsr250-api'
+    javaxInjectId = 'javax.inject:javax.inject'
+    rxJavaGroupId = 'io.reactivex.rxjava2'
+    rxAndroidArtifactId = "rxandroid"
+    rxKotlinArtifactId = 'rxkotlin'
+
+    // Languages
+    kotlinArtifactId = 'kotlin-stdlib-jre7'
+    kotlinGroupId = 'org.jetbrains.kotlin'
+
+    // Testing
+    junitId = 'junit:junit'
+    kotlinJUnitArtifactId = 'kotlin-test-junit'
+    //endregion
+
+    //region Dependencies
+    androidMobileAppDeps = [
+            androidSupportAnnotations:      "$androidSupportGroupId:$androidSupportAnnotationsArtifactId:$supportLibraryVersion",
+            androidSupportConstraintLayout: "$androidSupportConstraintLayoutId:$androidSupportConstraintLayoutVersion",
+            androidSupportDesign:           "$androidSupportGroupId:$androidSupportDesignArtifactId:$supportLibraryVersion",
+            androidSupportV4:               "$androidSupportGroupId:$androidSupportLibraryV4ArtifactId:$supportLibraryVersion",
+            androidSupportV13:              "$androidSupportGroupId:$androidSupportLibraryV13ArtifactId:$supportLibraryVersion",
+            ankoDesign:                     "$ankoGroupId:$ankoDesignArtifactId:$ankoVersion",
+            appCompatV7:                    "$androidSupportGroupId:$appCompatV7ArtifactId:$supportLibraryVersion",
+            dagger:                         "$daggerGroupId:$daggerArtifactId:$daggerVersion",
+            daggerAndroidProcessor:         "$daggerGroupId:$daggerAndroidProcessorArtifactId:$daggerVersion",
+            daggerAndroidSupport:           "$daggerGroupId:$daggerAndroidSupportArtifactId:$daggerVersion",
+            daggerCompiler:                 "$daggerGroupId:$daggerCompilerArtifactId:$daggerVersion",
+            glide:                          "$glideGroupId:$glideArtifactId:$glideVersion",
+            glideCompiler:                  "$glideGroupId:$glideCompilerArtifactId:$glideVersion",
+            javaxAnnotation:                "$javaxAnnotationId:$javaxAnnotationVersion",
+            javaxInject:                    "$javaxInjectId:$javaxInjectVersion",
+            kotlin:                         "$kotlinGroupId:$kotlinArtifactId:$kotlinVersion",
+            rxAndroid:                      "$rxJavaGroupId:$rxAndroidArtifactId:$rxAndroidVersion",
+            rxKotlin:                       "$rxJavaGroupId:$rxKotlinArtifactId:$rxKotlinVersion"
+    ]
+
+    androidMobileAppTestDeps = [
+            androidSupportTestRunner: "${androidSupportTestGroupId}:${androidSupportTestRunnerArtifactId}:${androidSupportTestRunnerVersion}",
+            androidSupportTestRules:  "${androidSupportTestGroupId}:${androidSupportTestRulesArtifactId}:${androidSupportTestRunnerVersion}",
+            junit:                    "$junitId:$jUnitVersion",
+            kotlinJUnit:              "${kotlinGroupId}:${kotlinJUnitArtifactId}:${kotlinVersion}"
+    ]
+    //endregion
+}
