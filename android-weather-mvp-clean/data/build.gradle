@@ -1,0 +1,26 @@
+apply plugin: 'kotlin'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+dependencies {
+    implementation project(':common')
+    implementation project(':domain')
+
+    def dataDeps = rootProject.dataDeps
+    def dataTestDeps = rootProject.dataTestDeps
+
+    compile dataDeps.javaxAnnotation
+
+    implementation dataDeps.javaxInject
+    implementation dataDeps.kotlin
+    implementation dataDeps.rxKotlin
+
+    testImplementation dataTestDeps.junit
+    testImplementation dataTestDeps.kotlinJUnit
+}
+
+sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+    test.java.srcDirs += 'src/test/kotlin'
+}
