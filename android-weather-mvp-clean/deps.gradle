@@ -22,6 +22,7 @@ ext {
     javaxInjectVersion = '1'
     okHttpVersion = '3.9.1'
     retrofitVersion = '2.3.0'
+    roomVersion = '1.0.0'
     rxAndroidVersion = '2.0.1'
     rxKotlinVersion = '2.2.0'
     supportLibraryVersion = '27.0.2'
@@ -64,6 +65,10 @@ ext {
     retrofitAdapterArtifactId = 'adapter-rxjava2'
     retrofitGsonConverterArtifactId = 'converter-gson'
     retrofitScalarsConverterArtifactId = 'converter-scalars'
+    roomGroupId = 'android.arch.persistence.room'
+    roomArtifactId = 'runtime'
+    roomCompilerArtifactId = 'compiler'
+    roomRxJavaArtifactId = 'rxjava2'
     rxJavaGroupId = 'io.reactivex.rxjava2'
     rxAndroidArtifactId = "rxandroid"
     rxKotlinArtifactId = 'rxkotlin'
@@ -100,6 +105,27 @@ ext {
     ]
 
     androidMobileAppTestDeps = [
+            androidSupportTestRunner: "${androidSupportTestGroupId}:${androidSupportTestRunnerArtifactId}:${androidSupportTestRunnerVersion}",
+            androidSupportTestRules:  "${androidSupportTestGroupId}:${androidSupportTestRulesArtifactId}:${androidSupportTestRunnerVersion}",
+            junit:                    "$junitId:$jUnitVersion",
+            kotlinJUnit:              "${kotlinGroupId}:${kotlinJUnitArtifactId}:${kotlinVersion}"
+    ]
+
+    androidMobileCacheDeps = [
+            androidSupportAnnotations: "$androidSupportGroupId:$androidSupportAnnotationsArtifactId:$supportLibraryVersion",
+            dagger:                    "$daggerGroupId:$daggerArtifactId:$daggerVersion",
+            daggerCompiler:            "$daggerGroupId:$daggerCompilerArtifactId:$daggerVersion",
+            gson:                      "$gsonId:$gsonVersion",
+            javaxAnnotation:           "$javaxAnnotationId:$javaxAnnotationVersion",
+            javaxInject:               "$javaxInjectId:$javaxInjectVersion",
+            kotlin:                    "$kotlinGroupId:$kotlinArtifactId:$kotlinVersion",
+            room:                      "$roomGroupId:$roomArtifactId:$roomVersion",
+            roomCompiler:              "$roomGroupId:$roomCompilerArtifactId:$roomVersion",
+            roomRxJava:                "$roomGroupId:$roomRxJavaArtifactId:$roomVersion",
+            rxKotlin:                  "$rxJavaGroupId:$rxKotlinArtifactId:$rxKotlinVersion"
+    ]
+
+    androidMobileCacheTestDeps = [
             androidSupportTestRunner: "${androidSupportTestGroupId}:${androidSupportTestRunnerArtifactId}:${androidSupportTestRunnerVersion}",
             androidSupportTestRules:  "${androidSupportTestGroupId}:${androidSupportTestRulesArtifactId}:${androidSupportTestRunnerVersion}",
             junit:                    "$junitId:$jUnitVersion",
