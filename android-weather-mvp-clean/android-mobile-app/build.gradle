@@ -32,6 +32,7 @@ dependencies {
     implementation project(':common')
     implementation project(':data')
     implementation project(':domain')
+    implementation project(':remote')
 
     def androidMobileAppDeps = rootProject.androidMobileAppDeps
     def androidMobileAppTestDeps = rootProject.androidMobileAppTestDeps

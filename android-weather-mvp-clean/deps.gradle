@@ -17,8 +17,11 @@ ext {
     ankoVersion = '0.10.3'
     daggerVersion = '2.13'
     glideVersion = '4.4.0'
+    gsonVersion = '2.8.2'
     javaxAnnotationVersion = '1.0'
     javaxInjectVersion = '1'
+    okHttpVersion = '3.9.1'
+    retrofitVersion = '2.3.0'
     rxAndroidVersion = '2.0.1'
     rxKotlinVersion = '2.2.0'
     supportLibraryVersion = '27.0.2'
@@ -50,8 +53,17 @@ ext {
     glideGroupId = 'com.github.bumptech.glide'
     glideArtifactId = 'glide'
     glideCompilerArtifactId = 'compiler'
+    gsonId = 'com.google.code.gson:gson'
     javaxAnnotationId = 'javax.annotation:jsr250-api'
     javaxInjectId = 'javax.inject:javax.inject'
+    okHttpGroupId = 'com.squareup.okhttp3'
+    okHttpArtifactId = 'okhttp'
+    okHttpLoggerArtifactId = 'logging-interceptor'
+    retrofitGroupId = 'com.squareup.retrofit2'
+    retrofitArtifactId = 'retrofit'
+    retrofitAdapterArtifactId = 'adapter-rxjava2'
+    retrofitGsonConverterArtifactId = 'converter-gson'
+    retrofitScalarsConverterArtifactId = 'converter-scalars'
     rxJavaGroupId = 'io.reactivex.rxjava2'
     rxAndroidArtifactId = "rxandroid"
     rxKotlinArtifactId = 'rxkotlin'
@@ -126,6 +138,28 @@ ext {
     ]
 
     domainTestDeps = [
+            junit:       "$junitId:$jUnitVersion",
+            kotlinJUnit: "${kotlinGroupId}:${kotlinJUnitArtifactId}:${kotlinVersion}"
+    ]
+
+    remoteDeps = [
+            androidSupportAnnotations: "$androidSupportGroupId:$androidSupportAnnotationsArtifactId:$supportLibraryVersion",
+            dagger:                    "$daggerGroupId:$daggerArtifactId:$daggerVersion",
+            daggerCompiler:            "$daggerGroupId:$daggerCompilerArtifactId:$daggerVersion",
+            gson:                      "$gsonId:$gsonVersion",
+            javaxAnnotation:           "$javaxAnnotationId:$javaxAnnotationVersion",
+            javaxInject:               "$javaxInjectId:$javaxInjectVersion",
+            kotlin:                    "$kotlinGroupId:$kotlinArtifactId:$kotlinVersion",
+            okHttp:                    "$okHttpGroupId:$okHttpArtifactId:$okHttpVersion",
+            okHttpLogger:              "$okHttpGroupId:$okHttpLoggerArtifactId:$okHttpVersion",
+            retrofit:                  "$retrofitGroupId:$retrofitArtifactId:$retrofitVersion",
+            retrofitAdapter:           "$retrofitGroupId:$retrofitAdapterArtifactId:$retrofitVersion",
+            retrofitGsonConverter:     "$retrofitGroupId:$retrofitGsonConverterArtifactId:$retrofitVersion",
+            retrofitScalarsConverter:  "$retrofitGroupId:$retrofitScalarsConverterArtifactId:$retrofitVersion",
+            rxKotlin:                  "$rxJavaGroupId:$rxKotlinArtifactId:$rxKotlinVersion"
+    ]
+
+    remoteTestDeps = [
             junit:       "$junitId:$jUnitVersion",
             kotlinJUnit: "${kotlinGroupId}:${kotlinJUnitArtifactId}:${kotlinVersion}"
     ]

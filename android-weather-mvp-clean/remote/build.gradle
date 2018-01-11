@@ -1,0 +1,33 @@
+apply plugin: 'kotlin'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+dependencies {
+    implementation project(':common')
+    implementation project(':data')
+    implementation project(':domain')
+
+    def remoteDeps = rootProject.remoteDeps
+    def remoteTestDeps = rootProject.remoteTestDeps
+
+    implementation remoteDeps.gson
+    implementation remoteDeps.javaxAnnotation
+    implementation remoteDeps.javaxInject
+    implementation remoteDeps.kotlin
+    implementation remoteDeps.okHttp
+    implementation remoteDeps.okHttpLogger
+    implementation remoteDeps.retrofit
+    implementation remoteDeps.retrofitAdapter
+    implementation remoteDeps.retrofitGsonConverter
+    implementation remoteDeps.retrofitScalarsConverter
+    implementation remoteDeps.rxKotlin
+
+    testImplementation remoteTestDeps.junit
+    testImplementation remoteTestDeps.kotlinJUnit
+}
+
+sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+    test.java.srcDirs += 'src/test/kotlin'
+}
