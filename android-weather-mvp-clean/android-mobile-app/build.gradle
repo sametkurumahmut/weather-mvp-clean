@@ -30,6 +30,7 @@ android {
 
 dependencies {
     implementation project(':android-mobile-cache')
+    implementation project(':android-mobile-device')
     implementation project(':common')
     implementation project(':data')
     implementation project(':domain')

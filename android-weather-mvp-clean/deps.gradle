@@ -132,6 +132,23 @@ ext {
             kotlinJUnit:              "${kotlinGroupId}:${kotlinJUnitArtifactId}:${kotlinVersion}"
     ]
 
+    androidMobileDeviceDeps = [
+            androidSupportAnnotations: "$androidSupportGroupId:$androidSupportAnnotationsArtifactId:$supportLibraryVersion",
+            androidSupportV4:          "$androidSupportGroupId:$androidSupportLibraryV4ArtifactId:$supportLibraryVersion",
+            javaxAnnotation:           "$javaxAnnotationId:$javaxAnnotationVersion",
+            javaxInject:               "$javaxInjectId:$javaxInjectVersion",
+            kotlin:                    "$kotlinGroupId:$kotlinArtifactId:$kotlinVersion",
+            rxAndroid:                 "$rxJavaGroupId:$rxAndroidArtifactId:$rxAndroidVersion",
+            rxKotlin:                  "$rxJavaGroupId:$rxKotlinArtifactId:$rxKotlinVersion"
+    ]
+
+    androidMobileDeviceTestDeps = [
+            androidSupportTestRunner: "${androidSupportTestGroupId}:${androidSupportTestRunnerArtifactId}:${androidSupportTestRunnerVersion}",
+            androidSupportTestRules:  "${androidSupportTestGroupId}:${androidSupportTestRulesArtifactId}:${androidSupportTestRunnerVersion}",
+            junit:                    "$junitId:$jUnitVersion",
+            kotlinJUnit:              "${kotlinGroupId}:${kotlinJUnitArtifactId}:${kotlinVersion}"
+    ]
+
     commonDeps = [
             javaxAnnotation: "$javaxAnnotationId:$javaxAnnotationVersion",
             javaxInject:     "$javaxInjectId:$javaxInjectVersion",
