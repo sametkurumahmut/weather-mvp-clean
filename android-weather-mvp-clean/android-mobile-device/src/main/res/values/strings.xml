@@ -1,0 +1,3 @@
+<resources>
+    <string name="error_permission_required_location">Permission required (missing ACCESS_FINE_LOCATION permission)</string>
+</resources>
