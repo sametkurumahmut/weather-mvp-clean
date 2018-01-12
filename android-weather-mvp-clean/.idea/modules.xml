@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/android-mobile-app/android-mobile-app.iml" filepath="$PROJECT_DIR$/android-mobile-app/android-mobile-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/android-mobile-cache/android-mobile-cache.iml" filepath="$PROJECT_DIR$/android-mobile-cache/android-mobile-cache.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android-mobile-device/android-mobile-device.iml" filepath="$PROJECT_DIR$/android-mobile-device/android-mobile-device.iml" />
       <module fileurl="file://$PROJECT_DIR$/android-weather-mvp-clean.iml" filepath="$PROJECT_DIR$/android-weather-mvp-clean.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/data/data.iml" filepath="$PROJECT_DIR$/data/data.iml" />

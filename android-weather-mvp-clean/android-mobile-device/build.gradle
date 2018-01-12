@@ -1,0 +1,49 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion rootProject.androidCompileSdkVersion
+    buildToolsVersion rootProject.androidBuildToolsVersion
+    defaultConfig {
+        minSdkVersion rootProject.androidMinSdkVersion
+        targetSdkVersion rootProject.androidTargetSdkVersion
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+}
+
+dependencies {
+    implementation project(':common')
+    implementation project(':domain')
+
+    def androidMobileDeviceDeps = rootProject.androidMobileDeviceDeps
+    def androidMobileDeviceTestDeps = rootProject.androidMobileDeviceTestDeps
+
+    implementation androidMobileDeviceDeps.androidSupportAnnotations
+    implementation androidMobileDeviceDeps.androidSupportV4
+    implementation androidMobileDeviceDeps.javaxAnnotation
+    implementation androidMobileDeviceDeps.javaxInject
+    implementation androidMobileDeviceDeps.kotlin
+    implementation androidMobileDeviceDeps.rxAndroid
+    implementation androidMobileDeviceDeps.rxKotlin
+
+    testImplementation androidMobileDeviceTestDeps.kotlinJUnit
+
+    // Instrumentation test dependencies
+    testImplementation androidMobileDeviceTestDeps.junit
+    androidTestImplementation (androidMobileDeviceTestDeps.androidSupportTestRules) {
+        exclude group: rootProject.androidSupportGroupId, module: rootProject.androidSupportAnnotationsArtifactId
+    }
+    androidTestImplementation (androidMobileDeviceTestDeps.androidSupportTestRunner) {
+        exclude group: rootProject.androidSupportGroupId, module: rootProject.androidSupportAnnotationsArtifactId
+    }
+}
