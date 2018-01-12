@@ -168,6 +168,18 @@ ext {
             kotlinJUnit: "${kotlinGroupId}:${kotlinJUnitArtifactId}:${kotlinVersion}"
     ]
 
+    presentationDeps = [
+            javaxAnnotation: "$javaxAnnotationId:$javaxAnnotationVersion",
+            javaxInject:     "$javaxInjectId:$javaxInjectVersion",
+            kotlin:          "$kotlinGroupId:$kotlinArtifactId:$kotlinVersion",
+            rxKotlin:        "$rxJavaGroupId:$rxKotlinArtifactId:$rxKotlinVersion"
+    ]
+
+    presentationTestDeps = [
+            junit:       "$junitId:$jUnitVersion",
+            kotlinJUnit: "${kotlinGroupId}:${kotlinJUnitArtifactId}:${kotlinVersion}"
+    ]
+
     remoteDeps = [
             androidSupportAnnotations: "$androidSupportGroupId:$androidSupportAnnotationsArtifactId:$supportLibraryVersion",
             dagger:                    "$daggerGroupId:$daggerArtifactId:$daggerVersion",

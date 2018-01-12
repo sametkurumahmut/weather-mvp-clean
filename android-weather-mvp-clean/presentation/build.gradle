@@ -1,0 +1,26 @@
+apply plugin: 'kotlin'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+dependencies {
+    implementation project(':common')
+    implementation project(':domain')
+
+    def presentationDeps = rootProject.presentationDeps
+    def presentationTestDeps = rootProject.presentationTestDeps
+
+    compile presentationDeps.javaxAnnotation
+
+    implementation presentationDeps.javaxInject
+    implementation presentationDeps.kotlin
+    implementation presentationDeps.rxKotlin
+
+    testImplementation presentationTestDeps.junit
+    testImplementation presentationTestDeps.kotlinJUnit
+}
+
+sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+    test.java.srcDirs += 'src/test/kotlin'
+}
