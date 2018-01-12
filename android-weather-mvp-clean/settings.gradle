@@ -1,1 +1,7 @@
-include ':android-mobile-app', ':android-mobile-cache', ':common', ':data', ':domain', ':remote'
+include ':android-mobile-app',
+        ':android-mobile-cache',
+        ':common',
+        ':data',
+        ':domain',
+        ':presentation',
+        ':remote'
