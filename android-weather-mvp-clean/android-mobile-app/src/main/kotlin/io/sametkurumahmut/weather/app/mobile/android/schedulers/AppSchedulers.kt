@@ -1,4 +1,4 @@
-package io.sametkurumahmut.weather.app.mobile.android.ui.schedulers
+package io.sametkurumahmut.weather.app.mobile.android.schedulers
 
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
