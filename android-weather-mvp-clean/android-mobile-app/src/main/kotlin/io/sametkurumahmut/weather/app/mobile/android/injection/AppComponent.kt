@@ -5,6 +5,7 @@ import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule
 import io.sametkurumahmut.weather.app.mobile.android.App
+import io.sametkurumahmut.weather.app.mobile.android.injection.module.ActivityBindingModule
 import io.sametkurumahmut.weather.app.mobile.android.injection.module.AppModule
 import io.sametkurumahmut.weather.app.mobile.android.injection.scope.PerApplication
 
@@ -18,7 +19,8 @@ import io.sametkurumahmut.weather.app.mobile.android.injection.scope.PerApplicat
 @PerApplication
 @Component(modules = [
     AndroidSupportInjectionModule::class,
-    AppModule::class])
+    AppModule::class,
+    ActivityBindingModule::class])
 interface AppComponent {
 
     @Component.Builder
