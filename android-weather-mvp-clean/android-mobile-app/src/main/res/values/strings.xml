@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Weather</string>
+    <string name="allow">Allow</string>
+    <string name="content_desc_ic_cloud_main_city_weather_info">City weather information icon</string>
+    <string name="content_desc_ic_temp_max">Maximum temperature icon</string>
+    <string name="content_desc_ic_temp_min">Minimum temperature icon</string>
+    <string name="current_location">Current Location</string>
+    <string name="error_weather_info_not_available">Weather information is not available</string>
+    <string name="format_temp" translatable="false">%dº</string>
+    <string name="go_app_settings">Go to App Settings</string>
+    <string name="img_from_city">Photo from the city</string>
+    <string name="info_permission_required_location">Weather needs to access your device Location to provide weather information.</string>
+    <string name="msg_rationale_location_go_app_settings">You can allow access at all times by App Settings -> Permissions</string>
+    <string name="network_unavailable">Network unavailable</string>
 </resources>
