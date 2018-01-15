@@ -2,6 +2,10 @@
 
 Weather Android app using Clean Architecture with MVP written in Kotlin.
 
+## Languages
+
+* [Kotlin](https://kotlinlang.org/)
+
 License
 --------
 
