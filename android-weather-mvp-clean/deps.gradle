@@ -105,10 +105,10 @@ ext {
     ]
 
     androidMobileAppTestDeps = [
-            androidSupportTestRunner: "${androidSupportTestGroupId}:${androidSupportTestRunnerArtifactId}:${androidSupportTestRunnerVersion}",
-            androidSupportTestRules:  "${androidSupportTestGroupId}:${androidSupportTestRulesArtifactId}:${androidSupportTestRunnerVersion}",
+            androidSupportTestRunner: "$androidSupportTestGroupId:$androidSupportTestRunnerArtifactId:$androidSupportTestRunnerVersion",
+            androidSupportTestRules:  "$androidSupportTestGroupId:$androidSupportTestRulesArtifactId:$androidSupportTestRunnerVersion",
             junit:                    "$junitId:$jUnitVersion",
-            kotlinJUnit:              "${kotlinGroupId}:${kotlinJUnitArtifactId}:${kotlinVersion}"
+            kotlinJUnit:              "$kotlinGroupId:$kotlinJUnitArtifactId:$kotlinVersion"
     ]
 
     androidMobileCacheDeps = [
@@ -126,10 +126,10 @@ ext {
     ]
 
     androidMobileCacheTestDeps = [
-            androidSupportTestRunner: "${androidSupportTestGroupId}:${androidSupportTestRunnerArtifactId}:${androidSupportTestRunnerVersion}",
-            androidSupportTestRules:  "${androidSupportTestGroupId}:${androidSupportTestRulesArtifactId}:${androidSupportTestRunnerVersion}",
+            androidSupportTestRunner: "$androidSupportTestGroupId:$androidSupportTestRunnerArtifactId:$androidSupportTestRunnerVersion",
+            androidSupportTestRules:  "$androidSupportTestGroupId:$androidSupportTestRulesArtifactId:$androidSupportTestRunnerVersion",
             junit:                    "$junitId:$jUnitVersion",
-            kotlinJUnit:              "${kotlinGroupId}:${kotlinJUnitArtifactId}:${kotlinVersion}"
+            kotlinJUnit:              "$kotlinGroupId:$kotlinJUnitArtifactId:$kotlinVersion"
     ]
 
     androidMobileDeviceDeps = [
@@ -143,10 +143,10 @@ ext {
     ]
 
     androidMobileDeviceTestDeps = [
-            androidSupportTestRunner: "${androidSupportTestGroupId}:${androidSupportTestRunnerArtifactId}:${androidSupportTestRunnerVersion}",
-            androidSupportTestRules:  "${androidSupportTestGroupId}:${androidSupportTestRulesArtifactId}:${androidSupportTestRunnerVersion}",
+            androidSupportTestRunner: "$androidSupportTestGroupId:$androidSupportTestRunnerArtifactId:$androidSupportTestRunnerVersion",
+            androidSupportTestRules:  "$androidSupportTestGroupId:$androidSupportTestRulesArtifactId:$androidSupportTestRunnerVersion",
             junit:                    "$junitId:$jUnitVersion",
-            kotlinJUnit:              "${kotlinGroupId}:${kotlinJUnitArtifactId}:${kotlinVersion}"
+            kotlinJUnit:              "$kotlinGroupId:$kotlinJUnitArtifactId:$kotlinVersion"
     ]
 
     commonDeps = [
@@ -158,7 +158,7 @@ ext {
 
     commonTestDeps = [
             junit:       "$junitId:$jUnitVersion",
-            kotlinJUnit: "${kotlinGroupId}:${kotlinJUnitArtifactId}:${kotlinVersion}"
+            kotlinJUnit: "$kotlinGroupId:$kotlinJUnitArtifactId:$kotlinVersion"
     ]
 
     dataDeps = [
@@ -170,7 +170,7 @@ ext {
 
     dataTestDeps = [
             junit:       "$junitId:$jUnitVersion",
-            kotlinJUnit: "${kotlinGroupId}:${kotlinJUnitArtifactId}:${kotlinVersion}"
+            kotlinJUnit: "$kotlinGroupId:$kotlinJUnitArtifactId:$kotlinVersion"
     ]
 
     domainDeps = [
@@ -182,7 +182,7 @@ ext {
 
     domainTestDeps = [
             junit:       "$junitId:$jUnitVersion",
-            kotlinJUnit: "${kotlinGroupId}:${kotlinJUnitArtifactId}:${kotlinVersion}"
+            kotlinJUnit: "$kotlinGroupId:$kotlinJUnitArtifactId:$kotlinVersion"
     ]
 
     presentationDeps = [
@@ -194,7 +194,7 @@ ext {
 
     presentationTestDeps = [
             junit:       "$junitId:$jUnitVersion",
-            kotlinJUnit: "${kotlinGroupId}:${kotlinJUnitArtifactId}:${kotlinVersion}"
+            kotlinJUnit: "$kotlinGroupId:$kotlinJUnitArtifactId:$kotlinVersion"
     ]
 
     remoteDeps = [
@@ -216,7 +216,7 @@ ext {
 
     remoteTestDeps = [
             junit:       "$junitId:$jUnitVersion",
-            kotlinJUnit: "${kotlinGroupId}:${kotlinJUnitArtifactId}:${kotlinVersion}"
+            kotlinJUnit: "$kotlinGroupId:$kotlinJUnitArtifactId:$kotlinVersion"
     ]
     //endregion
 }
