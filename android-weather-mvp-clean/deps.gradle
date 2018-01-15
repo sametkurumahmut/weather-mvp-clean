@@ -14,9 +14,9 @@ ext {
 
     // Libraries
     androidSupportConstraintLayoutVersion = '1.0.2'
-    ankoVersion = '0.10.3'
-    daggerVersion = '2.13'
-    glideVersion = '4.4.0'
+    ankoVersion = '0.10.4'
+    daggerVersion = '2.14.1'
+    glideVersion = '4.5.0'
     gsonVersion = '2.8.2'
     javaxAnnotationVersion = '1.0'
     javaxInjectVersion = '1'
