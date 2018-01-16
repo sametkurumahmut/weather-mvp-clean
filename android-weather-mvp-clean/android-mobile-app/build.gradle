@@ -1,0 +1,76 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.androidCompileSdkVersion
+    buildToolsVersion rootProject.androidBuildToolsVersion
+    defaultConfig {
+        applicationId "io.sametkurumahmut.weather.app.mobile.android"
+        minSdkVersion rootProject.androidMinSdkVersion
+        targetSdkVersion rootProject.androidTargetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+}
+
+dependencies {
+    implementation project(':android-mobile-cache')
+    implementation project(':android-mobile-device')
+    implementation project(':common')
+    implementation project(':data')
+    implementation project(':domain')
+    implementation project(':presentation')
+    implementation project(':remote')
+
+    def androidMobileAppDeps = rootProject.androidMobileAppDeps
+    def androidMobileAppTestDeps = rootProject.androidMobileAppTestDeps
+
+    implementation androidMobileAppDeps.androidSupportAnnotations
+    implementation androidMobileAppDeps.androidSupportConstraintLayout
+    implementation androidMobileAppDeps.androidSupportDesign
+    implementation androidMobileAppDeps.androidSupportV4
+    implementation androidMobileAppDeps.androidSupportV13
+    implementation androidMobileAppDeps.ankoDesign
+    implementation androidMobileAppDeps.appCompatV7
+    implementation androidMobileAppDeps.daggerAndroidSupport
+    implementation androidMobileAppDeps.dagger
+    implementation androidMobileAppDeps.glide
+    implementation androidMobileAppDeps.javaxAnnotation
+    implementation androidMobileAppDeps.javaxInject
+    implementation androidMobileAppDeps.kotlin
+    implementation androidMobileAppDeps.rxAndroid
+    implementation androidMobileAppDeps.rxKotlin
+
+    kapt androidMobileAppDeps.daggerCompiler
+    kapt androidMobileAppDeps.daggerAndroidProcessor
+    kapt androidMobileAppDeps.glideCompiler
+
+    testImplementation androidMobileAppTestDeps.kotlinJUnit
+
+    // Instrumentation test dependencies
+    androidTestImplementation androidMobileAppTestDeps.junit
+    androidTestImplementation (androidMobileAppTestDeps.androidSupportTestRules) {
+        exclude group: rootProject.androidSupportGroupId, module: rootProject.androidSupportAnnotationsArtifactId
+    }
+    androidTestImplementation (androidMobileAppTestDeps.androidSupportTestRunner) {
+        exclude group: rootProject.androidSupportGroupId, module: rootProject.androidSupportAnnotationsArtifactId
+    }
+
+    kaptTest androidMobileAppDeps.daggerCompiler
+    kaptAndroidTest androidMobileAppDeps.daggerCompiler
+}

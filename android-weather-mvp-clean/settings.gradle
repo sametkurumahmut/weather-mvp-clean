@@ -1,0 +1,8 @@
+include ':android-mobile-app',
+        ':android-mobile-cache',
+        ':android-mobile-device',
+        ':common',
+        ':data',
+        ':domain',
+        ':presentation',
+        ':remote'

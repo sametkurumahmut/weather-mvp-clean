@@ -1,0 +1,222 @@
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    //region Versions
+    //Android
+    androidBuildToolsVersion = '27.0.1'
+    androidMinSdkVersion = 14
+    androidTargetSdkVersion = 27
+    androidCompileSdkVersion = 27
+
+    // Libraries
+    androidSupportConstraintLayoutVersion = '1.0.2'
+    ankoVersion = '0.10.4'
+    daggerVersion = '2.14.1'
+    glideVersion = '4.5.0'
+    gsonVersion = '2.8.2'
+    javaxAnnotationVersion = '1.0'
+    javaxInjectVersion = '1'
+    okHttpVersion = '3.9.1'
+    retrofitVersion = '2.3.0'
+    roomVersion = '1.0.0'
+    rxAndroidVersion = '2.0.1'
+    rxKotlinVersion = '2.2.0'
+    supportLibraryVersion = '27.0.2'
+
+    // Testing
+    androidSupportTestRunnerVersion = '1.0.1'
+    jUnitVersion = '4.12'
+    //endregion
+
+    //region Group and Artifact IDs
+    // Libraries
+    androidSupportAnnotationsArtifactId = 'support-annotations'
+    androidSupportConstraintLayoutId = 'com.android.support.constraint:constraint-layout'
+    androidSupportGroupId = 'com.android.support'
+    androidSupportDesignArtifactId = 'design'
+    androidSupportLibraryV4ArtifactId = 'support-v4'
+    androidSupportLibraryV13ArtifactId = 'support-v13'
+    androidSupportTestGroupId = 'com.android.support.test'
+    androidSupportTestRunnerArtifactId = 'runner'
+    androidSupportTestRulesArtifactId = 'rules'
+    ankoGroupId = 'org.jetbrains.anko'
+    ankoDesignArtifactId = 'anko-design'
+    appCompatV7ArtifactId = 'appcompat-v7'
+    daggerGroupId = 'com.google.dagger'
+    daggerArtifactId = 'dagger'
+    daggerAndroidSupportArtifactId = 'dagger-android-support'
+    daggerAndroidProcessorArtifactId = 'dagger-android-processor'
+    daggerCompilerArtifactId = 'dagger-compiler'
+    glideGroupId = 'com.github.bumptech.glide'
+    glideArtifactId = 'glide'
+    glideCompilerArtifactId = 'compiler'
+    gsonId = 'com.google.code.gson:gson'
+    javaxAnnotationId = 'javax.annotation:jsr250-api'
+    javaxInjectId = 'javax.inject:javax.inject'
+    okHttpGroupId = 'com.squareup.okhttp3'
+    okHttpArtifactId = 'okhttp'
+    okHttpLoggerArtifactId = 'logging-interceptor'
+    retrofitGroupId = 'com.squareup.retrofit2'
+    retrofitArtifactId = 'retrofit'
+    retrofitAdapterArtifactId = 'adapter-rxjava2'
+    retrofitGsonConverterArtifactId = 'converter-gson'
+    retrofitScalarsConverterArtifactId = 'converter-scalars'
+    roomGroupId = 'android.arch.persistence.room'
+    roomArtifactId = 'runtime'
+    roomCompilerArtifactId = 'compiler'
+    roomRxJavaArtifactId = 'rxjava2'
+    rxJavaGroupId = 'io.reactivex.rxjava2'
+    rxAndroidArtifactId = "rxandroid"
+    rxKotlinArtifactId = 'rxkotlin'
+
+    // Languages
+    kotlinArtifactId = 'kotlin-stdlib-jre7'
+    kotlinGroupId = 'org.jetbrains.kotlin'
+
+    // Testing
+    junitId = 'junit:junit'
+    kotlinJUnitArtifactId = 'kotlin-test-junit'
+    //endregion
+
+    //region Dependencies
+    androidMobileAppDeps = [
+            androidSupportAnnotations:      "$androidSupportGroupId:$androidSupportAnnotationsArtifactId:$supportLibraryVersion",
+            androidSupportConstraintLayout: "$androidSupportConstraintLayoutId:$androidSupportConstraintLayoutVersion",
+            androidSupportDesign:           "$androidSupportGroupId:$androidSupportDesignArtifactId:$supportLibraryVersion",
+            androidSupportV4:               "$androidSupportGroupId:$androidSupportLibraryV4ArtifactId:$supportLibraryVersion",
+            androidSupportV13:              "$androidSupportGroupId:$androidSupportLibraryV13ArtifactId:$supportLibraryVersion",
+            ankoDesign:                     "$ankoGroupId:$ankoDesignArtifactId:$ankoVersion",
+            appCompatV7:                    "$androidSupportGroupId:$appCompatV7ArtifactId:$supportLibraryVersion",
+            dagger:                         "$daggerGroupId:$daggerArtifactId:$daggerVersion",
+            daggerAndroidProcessor:         "$daggerGroupId:$daggerAndroidProcessorArtifactId:$daggerVersion",
+            daggerAndroidSupport:           "$daggerGroupId:$daggerAndroidSupportArtifactId:$daggerVersion",
+            daggerCompiler:                 "$daggerGroupId:$daggerCompilerArtifactId:$daggerVersion",
+            glide:                          "$glideGroupId:$glideArtifactId:$glideVersion",
+            glideCompiler:                  "$glideGroupId:$glideCompilerArtifactId:$glideVersion",
+            javaxAnnotation:                "$javaxAnnotationId:$javaxAnnotationVersion",
+            javaxInject:                    "$javaxInjectId:$javaxInjectVersion",
+            kotlin:                         "$kotlinGroupId:$kotlinArtifactId:$kotlinVersion",
+            rxAndroid:                      "$rxJavaGroupId:$rxAndroidArtifactId:$rxAndroidVersion",
+            rxKotlin:                       "$rxJavaGroupId:$rxKotlinArtifactId:$rxKotlinVersion"
+    ]
+
+    androidMobileAppTestDeps = [
+            androidSupportTestRunner: "$androidSupportTestGroupId:$androidSupportTestRunnerArtifactId:$androidSupportTestRunnerVersion",
+            androidSupportTestRules:  "$androidSupportTestGroupId:$androidSupportTestRulesArtifactId:$androidSupportTestRunnerVersion",
+            junit:                    "$junitId:$jUnitVersion",
+            kotlinJUnit:              "$kotlinGroupId:$kotlinJUnitArtifactId:$kotlinVersion"
+    ]
+
+    androidMobileCacheDeps = [
+            androidSupportAnnotations: "$androidSupportGroupId:$androidSupportAnnotationsArtifactId:$supportLibraryVersion",
+            dagger:                    "$daggerGroupId:$daggerArtifactId:$daggerVersion",
+            daggerCompiler:            "$daggerGroupId:$daggerCompilerArtifactId:$daggerVersion",
+            gson:                      "$gsonId:$gsonVersion",
+            javaxAnnotation:           "$javaxAnnotationId:$javaxAnnotationVersion",
+            javaxInject:               "$javaxInjectId:$javaxInjectVersion",
+            kotlin:                    "$kotlinGroupId:$kotlinArtifactId:$kotlinVersion",
+            room:                      "$roomGroupId:$roomArtifactId:$roomVersion",
+            roomCompiler:              "$roomGroupId:$roomCompilerArtifactId:$roomVersion",
+            roomRxJava:                "$roomGroupId:$roomRxJavaArtifactId:$roomVersion",
+            rxKotlin:                  "$rxJavaGroupId:$rxKotlinArtifactId:$rxKotlinVersion"
+    ]
+
+    androidMobileCacheTestDeps = [
+            androidSupportTestRunner: "$androidSupportTestGroupId:$androidSupportTestRunnerArtifactId:$androidSupportTestRunnerVersion",
+            androidSupportTestRules:  "$androidSupportTestGroupId:$androidSupportTestRulesArtifactId:$androidSupportTestRunnerVersion",
+            junit:                    "$junitId:$jUnitVersion",
+            kotlinJUnit:              "$kotlinGroupId:$kotlinJUnitArtifactId:$kotlinVersion"
+    ]
+
+    androidMobileDeviceDeps = [
+            androidSupportAnnotations: "$androidSupportGroupId:$androidSupportAnnotationsArtifactId:$supportLibraryVersion",
+            androidSupportV4:          "$androidSupportGroupId:$androidSupportLibraryV4ArtifactId:$supportLibraryVersion",
+            javaxAnnotation:           "$javaxAnnotationId:$javaxAnnotationVersion",
+            javaxInject:               "$javaxInjectId:$javaxInjectVersion",
+            kotlin:                    "$kotlinGroupId:$kotlinArtifactId:$kotlinVersion",
+            rxAndroid:                 "$rxJavaGroupId:$rxAndroidArtifactId:$rxAndroidVersion",
+            rxKotlin:                  "$rxJavaGroupId:$rxKotlinArtifactId:$rxKotlinVersion"
+    ]
+
+    androidMobileDeviceTestDeps = [
+            androidSupportTestRunner: "$androidSupportTestGroupId:$androidSupportTestRunnerArtifactId:$androidSupportTestRunnerVersion",
+            androidSupportTestRules:  "$androidSupportTestGroupId:$androidSupportTestRulesArtifactId:$androidSupportTestRunnerVersion",
+            junit:                    "$junitId:$jUnitVersion",
+            kotlinJUnit:              "$kotlinGroupId:$kotlinJUnitArtifactId:$kotlinVersion"
+    ]
+
+    commonDeps = [
+            javaxAnnotation: "$javaxAnnotationId:$javaxAnnotationVersion",
+            javaxInject:     "$javaxInjectId:$javaxInjectVersion",
+            kotlin:          "$kotlinGroupId:$kotlinArtifactId:$kotlinVersion",
+            rxKotlin:        "$rxJavaGroupId:$rxKotlinArtifactId:$rxKotlinVersion"
+    ]
+
+    commonTestDeps = [
+            junit:       "$junitId:$jUnitVersion",
+            kotlinJUnit: "$kotlinGroupId:$kotlinJUnitArtifactId:$kotlinVersion"
+    ]
+
+    dataDeps = [
+            javaxAnnotation: "$javaxAnnotationId:$javaxAnnotationVersion",
+            javaxInject:     "$javaxInjectId:$javaxInjectVersion",
+            kotlin:          "$kotlinGroupId:$kotlinArtifactId:$kotlinVersion",
+            rxKotlin:        "$rxJavaGroupId:$rxKotlinArtifactId:$rxKotlinVersion"
+    ]
+
+    dataTestDeps = [
+            junit:       "$junitId:$jUnitVersion",
+            kotlinJUnit: "$kotlinGroupId:$kotlinJUnitArtifactId:$kotlinVersion"
+    ]
+
+    domainDeps = [
+            javaxAnnotation: "$javaxAnnotationId:$javaxAnnotationVersion",
+            javaxInject:     "$javaxInjectId:$javaxInjectVersion",
+            kotlin:          "$kotlinGroupId:$kotlinArtifactId:$kotlinVersion",
+            rxKotlin:        "$rxJavaGroupId:$rxKotlinArtifactId:$rxKotlinVersion"
+    ]
+
+    domainTestDeps = [
+            junit:       "$junitId:$jUnitVersion",
+            kotlinJUnit: "$kotlinGroupId:$kotlinJUnitArtifactId:$kotlinVersion"
+    ]
+
+    presentationDeps = [
+            javaxAnnotation: "$javaxAnnotationId:$javaxAnnotationVersion",
+            javaxInject:     "$javaxInjectId:$javaxInjectVersion",
+            kotlin:          "$kotlinGroupId:$kotlinArtifactId:$kotlinVersion",
+            rxKotlin:        "$rxJavaGroupId:$rxKotlinArtifactId:$rxKotlinVersion"
+    ]
+
+    presentationTestDeps = [
+            junit:       "$junitId:$jUnitVersion",
+            kotlinJUnit: "$kotlinGroupId:$kotlinJUnitArtifactId:$kotlinVersion"
+    ]
+
+    remoteDeps = [
+            androidSupportAnnotations: "$androidSupportGroupId:$androidSupportAnnotationsArtifactId:$supportLibraryVersion",
+            dagger:                    "$daggerGroupId:$daggerArtifactId:$daggerVersion",
+            daggerCompiler:            "$daggerGroupId:$daggerCompilerArtifactId:$daggerVersion",
+            gson:                      "$gsonId:$gsonVersion",
+            javaxAnnotation:           "$javaxAnnotationId:$javaxAnnotationVersion",
+            javaxInject:               "$javaxInjectId:$javaxInjectVersion",
+            kotlin:                    "$kotlinGroupId:$kotlinArtifactId:$kotlinVersion",
+            okHttp:                    "$okHttpGroupId:$okHttpArtifactId:$okHttpVersion",
+            okHttpLogger:              "$okHttpGroupId:$okHttpLoggerArtifactId:$okHttpVersion",
+            retrofit:                  "$retrofitGroupId:$retrofitArtifactId:$retrofitVersion",
+            retrofitAdapter:           "$retrofitGroupId:$retrofitAdapterArtifactId:$retrofitVersion",
+            retrofitGsonConverter:     "$retrofitGroupId:$retrofitGsonConverterArtifactId:$retrofitVersion",
+            retrofitScalarsConverter:  "$retrofitGroupId:$retrofitScalarsConverterArtifactId:$retrofitVersion",
+            rxKotlin:                  "$rxJavaGroupId:$rxKotlinArtifactId:$rxKotlinVersion"
+    ]
+
+    remoteTestDeps = [
+            junit:       "$junitId:$jUnitVersion",
+            kotlinJUnit: "$kotlinGroupId:$kotlinJUnitArtifactId:$kotlinVersion"
+    ]
+    //endregion
+}

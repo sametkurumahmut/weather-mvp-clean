@@ -1,0 +1,53 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.androidCompileSdkVersion
+    buildToolsVersion rootProject.androidBuildToolsVersion
+    defaultConfig {
+        minSdkVersion rootProject.androidMinSdkVersion
+        targetSdkVersion rootProject.androidTargetSdkVersion
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+}
+
+dependencies {
+    implementation project(':common')
+    implementation project(':data')
+    implementation project(':domain')
+
+    def androidMobileCacheDeps = rootProject.androidMobileCacheDeps
+    def androidMobileCacheTestDeps = rootProject.androidMobileCacheTestDeps
+
+    implementation androidMobileCacheDeps.gson
+    implementation androidMobileCacheDeps.javaxAnnotation
+    implementation androidMobileCacheDeps.javaxInject
+    implementation androidMobileCacheDeps.kotlin
+    compile androidMobileCacheDeps.room
+    implementation androidMobileCacheDeps.roomRxJava
+    implementation androidMobileCacheDeps.rxKotlin
+
+    kapt androidMobileCacheDeps.roomCompiler
+
+    testImplementation androidMobileCacheTestDeps.kotlinJUnit
+
+    // Instrumentation test dependencies
+    testImplementation androidMobileCacheTestDeps.junit
+    androidTestImplementation (androidMobileCacheTestDeps.androidSupportTestRules) {
+        exclude group: rootProject.androidSupportGroupId, module: rootProject.androidSupportAnnotationsArtifactId
+    }
+    androidTestImplementation (androidMobileCacheTestDeps.androidSupportTestRunner) {
+        exclude group: rootProject.androidSupportGroupId, module: rootProject.androidSupportAnnotationsArtifactId
+    }
+}
