@@ -2,6 +2,8 @@
 
 > Weather Android app using Clean Architecture with MVP written in Kotlin.
 
+![alt text][appShowcase]
+
 ## Languages
 
 * [Kotlin](https://kotlinlang.org/)
@@ -37,3 +39,5 @@ License
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+[appShowcase]: https://drive.google.com/open?id=17VTSDlOFl-iGaga2BBQOYwbKxCYkpVx2 "Weather MVP Clean"
