@@ -40,4 +40,4 @@ License
     See the License for the specific language governing permissions and
     limitations under the License.
 
-[appShowcase]: https://drive.google.com/open?id=17VTSDlOFl-iGaga2BBQOYwbKxCYkpVx2 "Weather MVP Clean"
+[appShowcase]: http://drive.google.com/uc?export=view&id=17VTSDlOFl-iGaga2BBQOYwbKxCYkpVx2 "Weather MVP Clean"
